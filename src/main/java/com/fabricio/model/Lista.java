@@ -2,6 +2,7 @@ package com.fabricio.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,9 +14,11 @@ public class Lista {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonProperty("_id")
+
+    @Column(length = 20, nullable = false)
     private Long id;
 
-    @Column(length = 200, nullable = false)
+    @Column(length = 100, nullable = false)
     private String name;
 
     @Column(length = 20, nullable = false)
